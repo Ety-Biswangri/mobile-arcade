@@ -20,7 +20,7 @@ const displayPhones = (phones) => {
     }
     else {
         phones.forEach(phone => {
-            console.log(phone);
+            // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col-lg-4');
             div.classList.add('col-12');
@@ -31,11 +31,37 @@ const displayPhones = (phones) => {
                     <div class="card-body">
                         <h5 class="card-title">${phone.phone_name}</h5>
                         <p class="card-text">Brand: ${phone.brand}</p>
-                        <button class="btn btn-primary">Explore Now</Details>
+                        <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary">Explore Now</Details>
                     </div>
                 </div>
             `;
             phoneContainer.appendChild(div);
         });
     }
+}
+
+const loadDetails = (slug) => {
+    const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => displayDetails(data.data))
+}
+
+const displayDetails = (detail) => {
+    console.log(detail);
+    const phoneDetailsContainer = document.getElementById('phone-details-container');
+    const div = document.createElement('div');
+    div.classList.add('col-12');
+    div.classList.add('my-5');
+    div.innerHTML = `
+                <div class="card" style="width: 18rem; margin: auto">
+                    <img src="${detail.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${detail.name}</h5>
+                        <p class="card-text">Brand: ${detail.brand}</p>
+                    </div>
+                </div>
+            `;
+    phoneDetailsContainer.appendChild(div);
 }
