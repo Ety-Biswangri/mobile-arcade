@@ -13,8 +13,32 @@ const loadPhones = () => {
 
 // displaying phones using phone names
 const displayPhones = (phones) => {
-    // console.log(phones);
-    phones.forEach(phone => {
-        console.log(phone);
-    });
+    const phoneContainer = document.getElementById('phone-container');
+    // error handling
+    if (phones.length === 0) {
+        console.log('No phones are found');
+    }
+    else {
+        phones.forEach(phone => {
+            console.log(phone);
+            const div = document.createElement('div');
+            div.classList.add('col-lg-4');
+            div.classList.add('col-12');
+            div.classList.add('mt-5');
+            div.innerHTML = `
+                <div class="card" style="width: 18rem; margin: auto">
+                    <img src="${phone.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${phone.phone_name}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card's
+                        content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            `;
+            phoneContainer.appendChild(div);
+        });
+    }
 }
