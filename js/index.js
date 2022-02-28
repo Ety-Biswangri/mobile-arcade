@@ -30,11 +30,8 @@ const displayPhones = (phones) => {
                     <img src="${phone.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${phone.phone_name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's
-                        content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text">Brand: ${phone.brand}</p>
+                        <button class="btn btn-primary">Explore Now</Details>
                     </div>
                 </div>
             `;
