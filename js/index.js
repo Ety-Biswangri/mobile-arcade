@@ -51,6 +51,7 @@ const loadDetails = (slug) => {
 const displayDetails = (detail) => {
     console.log(detail);
     const phoneDetailsContainer = document.getElementById('phone-details-container');
+    phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.classList.add('col-12');
     div.classList.add('my-5');
@@ -59,7 +60,7 @@ const displayDetails = (detail) => {
                     <img src="${detail.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${detail.name}</h5>
-                        <p class="card-text">Brand: ${detail.brand}</p>
+                        <p class="card-text">Brand: ${detail.releaseDate}</p>
                     </div>
                 </div>
             `;
