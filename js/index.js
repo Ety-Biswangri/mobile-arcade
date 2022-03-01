@@ -32,10 +32,11 @@ const displayPhones = (phones) => {
             // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col-lg-4');
+            div.classList.add('col-md-6');
             div.classList.add('col-12');
             div.classList.add('mt-5');
             div.innerHTML = `
-                    <div class="card" style="width: 18rem; margin: auto">
+                    <div class="card" style="width: 80%; margin: auto">
                         <img src="${phone.image}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${phone.phone_name}</h5>
@@ -60,29 +61,49 @@ const loadDetails = (slug) => {
 
 // displaying phone details using slug
 const displayDetails = (detail) => {
-    console.log(detail.others);
+    console.log(detail);
     phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.classList.add('col-12');
     div.classList.add('my-5');
     div.innerHTML = `
-                <div class="card" style="width: 80%; margin: auto">
-                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 10px; margin-bottom: 10px; " class="card-img-top" alt="...">
+                <div class="card" style="width: 70%; margin: auto">
+
+                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 20px; margin-bottom: 10px; " class="card-img-top" alt="...">
+
                     <div class="card-body">
                         <h5 class="card-title">${detail.name}</h5>
                         <p class="card-text">${detail.releaseDate ? detail.releaseDate : 'No Release Date is found'}</p>
-                        <h6> <b>Main Features:</b> </h6>
-                        <p> <b>Display Size:</b> ${detail.mainFeatures.displaySize ? detail.mainFeatures.displaySize : 'No Display Size is found'}
+
+                        <div>
+                         <h6> <b>Main Features:</b> </h6>
+                         <p> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'}
                          <br>
-                         <b>Chipset:</b> ${detail.mainFeatures.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
+                         <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
                          <br>
-                         <b>Storage:</b> ${detail.mainFeatures.storage ? detail.mainFeatures.storage : 'No storage is found'}
+                         <b>Storage:</b> ${detail.mainFeatures?.storage ? detail.mainFeatures.storage : 'No storage is found'}
                          <br>
-                         <b>Memory:</b> ${detail.mainFeatures.memory ? detail.mainFeatures.memory : 'No Memory is found'}
+                         <b>Memory:</b> ${detail.mainFeatures?.memory ? detail.mainFeatures.memory : 'No Memory is found'}
                          <br>
-                         <b>Sensors:</b> ${detail.mainFeatures.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
-                         <br>
+                         <b>Sensors:</b> ${detail.mainFeatures?.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
+                         </p>
+
+                         <p>
                          <h6> <b>Others:</b> </h6>
+                         <p> <b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
+                         <br>
+                         <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
+                         <br>
+                         <b>GPS:</b> ${detail.others?.GPS ? detail.others.GPS : 'No GPS is found'}
+                         <br>
+                         <b>NFC:</b> ${detail.others?.NFC ? detail.others.NFC : 'No NFC is found'}
+                         <br>
+                         <b>Radio:</b> ${detail.others?.Radio ? detail.others.Radio : 'No Radio is found'}
+                         <br>
+                         <b>USB:</b> ${detail.others?.USB ? detail.others.USB : 'No USB is found'}
+                         </p>
+                        </div>
+
                     </div>
                 </div>
             `;
