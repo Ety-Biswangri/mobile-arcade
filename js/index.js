@@ -1,3 +1,5 @@
+const phoneDetailsContainer = document.getElementById('phone-details-container');
+
 // loading phones using phone names
 const loadPhones = () => {
     const searchField = document.getElementById('search-text');
@@ -8,34 +10,46 @@ const loadPhones = () => {
     fetch(url)
         .then(response => response.json())
         .then(data => displayPhones(data.data))
-    // console.log(url);
 }
 
 // displaying phones using phone names
 const displayPhones = (phones) => {
-    // console.log(first20Phones);
     const phoneContainer = document.getElementById('phone-container');
+    const errorMessage = document.getElementById('error-message');
+    phoneDetailsContainer.textContent = '';
+    phoneContainer.textContent = '';
+    errorMessage.textContent = '';
     const first20Phones = phones.slice(0, 20);
-    first20Phones.forEach(phone => {
-        // console.log(phone);
-        const div = document.createElement('div');
-        div.classList.add('col-lg-4');
-        div.classList.add('col-12');
-        div.classList.add('mt-5');
-        div.innerHTML = `
-                <div class="card" style="width: 18rem; margin: auto">
-                    <img src="${phone.image}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${phone.phone_name}</h5>
-                        <p class="card-text">Brand: ${phone.brand}</p>
-                        <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary">Explore Now</Details>
+
+    // error handling
+    if (first20Phones.length == 0) {
+        errorMessage.innerHTML = `
+        <p class="text-center text-danger fw-bold fs-3 my-3">Sorry! No Phone Is Found</p>
+        `;
+    }
+    else {
+        first20Phones.forEach(phone => {
+            // console.log(phone);
+            const div = document.createElement('div');
+            div.classList.add('col-lg-4');
+            div.classList.add('col-12');
+            div.classList.add('mt-5');
+            div.innerHTML = `
+                    <div class="card" style="width: 18rem; margin: auto">
+                        <img src="${phone.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${phone.phone_name}</h5>
+                            <p class="card-text">Brand: ${phone.brand}</p>
+                            <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary">Explore Now</Details>
+                        </div>
                     </div>
-                </div>
-            `;
-        phoneContainer.appendChild(div);
-    });
+                `;
+            phoneContainer.appendChild(div);
+        });
+    }
 }
 
+// loading phone details using slug
 const loadDetails = (slug) => {
     const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
 
@@ -44,9 +58,9 @@ const loadDetails = (slug) => {
         .then(data => displayDetails(data.data))
 }
 
+// displaying phone details using slug
 const displayDetails = (detail) => {
     // console.log(detail);
-    const phoneDetailsContainer = document.getElementById('phone-details-container');
     phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.classList.add('col-12');
@@ -56,7 +70,7 @@ const displayDetails = (detail) => {
                     <img src="${detail.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${detail.name}</h5>
-                        <p class="card-text">Brand: ${detail.releaseDate}</p>
+                        <p class="card-text">${detail.releaseDate ? detail.releaseDate : 'No Release Date is found'}</p>
                     </div>
                 </div>
             `;
