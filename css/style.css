@@ -19,6 +19,7 @@ body{
     justify-content: center;
 }
 
+/* spinner css style */
 #spinner{
     display: none;
 }
