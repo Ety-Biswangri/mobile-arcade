@@ -71,7 +71,7 @@ const displayDetails = (detail) => {
     div.innerHTML = `
                 <div class="card" style="width: 70%; margin: auto; background-color:#Fdfcfa; box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;">
 
-                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 25px; margin-bottom: 10px; " class="card-img-top img-fluid" alt="...">
+                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 25px; margin-bottom: 10px;" class="card-img-top img-fluid" alt="...">
 
                     <div class="card-body">
                         <h4 class="card-title text-center fw-bolder">${detail.name}</h4>
