@@ -60,17 +60,29 @@ const loadDetails = (slug) => {
 
 // displaying phone details using slug
 const displayDetails = (detail) => {
-    // console.log(detail);
+    console.log(detail.others);
     phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.classList.add('col-12');
     div.classList.add('my-5');
     div.innerHTML = `
-                <div class="card" style="width: 18rem; margin: auto">
-                    <img src="${detail.image}" class="card-img-top" alt="...">
+                <div class="card" style="width: 80%; margin: auto">
+                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 10px; margin-bottom: 10px; " class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${detail.name}</h5>
                         <p class="card-text">${detail.releaseDate ? detail.releaseDate : 'No Release Date is found'}</p>
+                        <h6> <b>Main Features:</b> </h6>
+                        <p> <b>Display Size:</b> ${detail.mainFeatures.displaySize ? detail.mainFeatures.displaySize : 'No Display Size is found'}
+                         <br>
+                         <b>Chipset:</b> ${detail.mainFeatures.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
+                         <br>
+                         <b>Storage:</b> ${detail.mainFeatures.storage ? detail.mainFeatures.storage : 'No storage is found'}
+                         <br>
+                         <b>Memory:</b> ${detail.mainFeatures.memory ? detail.mainFeatures.memory : 'No Memory is found'}
+                         <br>
+                         <b>Sensors:</b> ${detail.mainFeatures.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
+                         <br>
+                         <h6> <b>Others:</b> </h6>
                     </div>
                 </div>
             `;
