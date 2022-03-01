@@ -13,24 +13,25 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="bg-light container">
-    <h1 class="text-center my-5 text-primary">Welcome To Mobile Arcade!</h1>
+<body class="bg-light">
+    <h1 class="text-center text-primary headings">Welcome To Mobile Arcade</h1>
     <!-- search bar -->
-    <div class="d-flex w-75 mx-auto">
-        <input id="search-text" class="form-control me-2" type="search" placeholder="Search mobile" aria-label="Search">
+    <div class="d-flex w-75 mx-auto my-4 mt-5 container">
+        <input id="search-text" class="form-control me-2" type="search" placeholder="Search your mobiles"
+            aria-label="Search">
         <button onclick="loadPhones()" id="search-button" class="btn btn-outline-primary" type="submit">Search</button>
     </div>
 
     <!-- error message -->
-    <div id="error-message">
+    <div class="container" id="error-message">
     </div>
 
     <!-- phone details exploring -->
-    <div id="phone-details-container">
+    <div class="container" id="phone-details-container">
     </div>
 
     <!-- phone showcase -->
-    <div id="phone-container" class="row mx-auto">
+    <div id="phone-container" class="container row mx-auto">
     </div>
 
     <!-- bootstrap js link -->

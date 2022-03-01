@@ -24,7 +24,7 @@ const displayPhones = (phones) => {
     const first20Phones = phones.slice(0, 20);
 
     // error handling
-    if (first20Phones.length == 0) {
+    if (first20Phones.length === 0) {
         errorMessage.innerHTML = `
         <p class="text-center text-danger fw-bold fs-3 my-3">Sorry! No Phone Is Found</p>
         `;
@@ -41,7 +41,7 @@ const displayPhones = (phones) => {
                     <div class="card mb-3" style="width: 80%; margin: auto; background-color: #Fdfcfa;">
                         <img src="${phone.image}" class="card-img-top m-auto mt-3 img-fluid" style="width: 50%" alt="...">
                         <div class="card-body text-center">
-                            <h5 class="card-title">${phone.phone_name}</h5>
+                            <h6 class="card-title fw-bold">${phone.phone_name}</h6>
                             <p class="card-text">Brand: ${phone.brand}</p>
                             <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary">Explore Now</Details>
                         </div>
@@ -71,42 +71,53 @@ const displayDetails = (detail) => {
     div.innerHTML = `
                 <div class="card" style="width: 70%; margin: auto; background-color:#Fdfcfa">
 
-                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 20px; margin-bottom: 10px; " class="card-img-top img-fluid" alt="...">
+                    <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 25px; margin-bottom: 10px; " class="card-img-top img-fluid" alt="...">
 
                     <div class="card-body">
-                        <h4 class="card-title text-center">${detail.name}</h4>
+                        <h4 class="card-title text-center fw-bolder">${detail.name}</h4>
                         <p class="card-text text-center">${detail.releaseDate ? detail.releaseDate : 'No Release Date is found'}</p>
                         <br>
 
                         <div class="m-auto">
-                        <h5> <b>Main Features:</b> </h5>
-                         <p> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'}
-                         <br>
-                         <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
-                         <br>
-                         <b>Storage:</b> ${detail.mainFeatures?.storage ? detail.mainFeatures.storage : 'No storage is found'}
-                         <br>
-                         <b>Memory:</b> ${detail.mainFeatures?.memory ? detail.mainFeatures.memory : 'No Memory is found'}
-                         <br>
-                         <b>Sensors:</b> ${detail.mainFeatures?.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
-                         </p>
+                          <h5> <b>Main Features:</b> </h5>
+                          <ul>
+                          <li> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'} 
+                          </li>
+                          <li>
+                          <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
+                          </li>
+                          <li>
+                          <b>Storage:</b> ${detail.mainFeatures?.storage ? detail.mainFeatures.storage : 'No storage is found'}
+                          </li>
+                          <li>
+                          <b>Memory:</b> ${detail.mainFeatures?.memory ? detail.mainFeatures.memory : 'No Memory is found'}
+                          </li>
+                          <li>
+                          <b>Sensors:</b> ${detail.mainFeatures?.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
+                          </li>
+                          </ul>
                         </div>
 
                         <div class="m-auto">
-                         <p>
-                         <h5> <b>Others:</b> </h5>
-                         <p> <b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
-                         <br>
-                         <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
-                         <br>
-                         <b>GPS:</b> ${detail.others?.GPS ? detail.others.GPS : 'No GPS is found'}
-                         <br>
-                         <b>NFC:</b> ${detail.others?.NFC ? detail.others.NFC : 'No NFC is found'}
-                         <br>
-                         <b>Radio:</b> ${detail.others?.Radio ? detail.others.Radio : 'No Radio is found'}
-                         <br>
-                         <b>USB:</b> ${detail.others?.USB ? detail.others.USB : 'No USB is found'}
-                         </p>
+                          <h5> <b>Others:</b> </h5>
+                          <ul>
+                          <li><b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
+                          </li>
+                          <li>
+                          <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
+                          </li>
+                          <li>
+                          <b>GPS:</b> ${detail.others?.GPS ? detail.others.GPS : 'No GPS is found'}
+                          </li>
+                          <li>
+                          <b>NFC:</b> ${detail.others?.NFC ? detail.others.NFC : 'No NFC is found'}
+                          </li>
+                          <li>
+                          <b>Radio:</b> ${detail.others?.Radio ? detail.others.Radio : 'No Radio is found'}
+                          <li>
+                          <b>USB:</b> ${detail.others?.USB ? detail.others.USB : 'No USB is found'}
+                          </li>
+                          </ul>
                         </div>
                     </div>
                 </div>
