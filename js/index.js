@@ -99,7 +99,7 @@ const displayDetails = (detail) => {
                         </div>
 
                         <div class="m-auto">
-                          <h5> <b>Others:</b> </h5>
+                          <h5> <b>Other Features:</b> </h5>
                           <ul>
                            <li><b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
                            </li>
