@@ -81,42 +81,42 @@ const displayDetails = (detail) => {
                         <div class="m-auto">
                           <h5> <b>Main Features:</b> </h5>
                           <ul>
-                          <li> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'} 
-                          </li>
-                          <li>
-                          <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
-                          </li>
-                          <li>
-                          <b>Storage:</b> ${detail.mainFeatures?.storage ? detail.mainFeatures.storage : 'No storage is found'}
-                          </li>
-                          <li>
-                          <b>Memory:</b> ${detail.mainFeatures?.memory ? detail.mainFeatures.memory : 'No Memory is found'}
-                          </li>
-                          <li>
-                          <b>Sensors:</b> ${detail.mainFeatures?.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
-                          </li>
+                           <li> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'} 
+                           </li>
+                           <li>
+                           <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
+                           </li>
+                           <li>
+                           <b>Storage:</b> ${detail.mainFeatures?.storage ? detail.mainFeatures.storage : 'No storage is found'}
+                           </li>
+                           <li>
+                           <b>Memory:</b> ${detail.mainFeatures?.memory ? detail.mainFeatures.memory : 'No Memory is found'}
+                           </li>
+                           <li>
+                           <b>Sensors:</b> ${detail.mainFeatures?.sensors ? detail.mainFeatures.sensors : 'No Sensors are found'}
+                           </li>
                           </ul>
                         </div>
 
                         <div class="m-auto">
                           <h5> <b>Others:</b> </h5>
                           <ul>
-                          <li><b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
-                          </li>
-                          <li>
-                          <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
-                          </li>
-                          <li>
-                          <b>GPS:</b> ${detail.others?.GPS ? detail.others.GPS : 'No GPS is found'}
-                          </li>
-                          <li>
-                          <b>NFC:</b> ${detail.others?.NFC ? detail.others.NFC : 'No NFC is found'}
-                          </li>
-                          <li>
-                          <b>Radio:</b> ${detail.others?.Radio ? detail.others.Radio : 'No Radio is found'}
-                          <li>
-                          <b>USB:</b> ${detail.others?.USB ? detail.others.USB : 'No USB is found'}
-                          </li>
+                           <li><b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
+                           </li>
+                           <li>
+                           <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
+                           </li>
+                           <li>
+                           <b>GPS:</b> ${detail.others?.GPS ? detail.others.GPS : 'No GPS is found'}
+                           </li>
+                           <li>
+                           <b>NFC:</b> ${detail.others?.NFC ? detail.others.NFC : 'No NFC is found'}
+                           </li>
+                           <li>
+                           <b>Radio:</b> ${detail.others?.Radio ? detail.others.Radio : 'No Radio is found'}
+                           <li>
+                           <b>USB:</b> ${detail.others?.USB ? detail.others.USB : 'No USB is found'}
+                           </li>
                           </ul>
                         </div>
                     </div>
