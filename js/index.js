@@ -38,7 +38,7 @@ const displayPhones = (phones) => {
             div.classList.add('col-12');
             div.classList.add('mt-5');
             div.innerHTML = `
-                    <div class="card mb-3" style="width: 80%; margin: auto; background-color: #Fdfcfa;">
+                    <div class="card mb-3" style="width: 80%; margin: auto; background-color: #Fdfcfa; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
                         <img src="${phone.image}" class="card-img-top m-auto mt-3 img-fluid" style="width: 50%" alt="...">
                         <div class="card-body text-center">
                             <h6 class="card-title fw-bold">${phone.phone_name}</h6>
@@ -69,7 +69,7 @@ const displayDetails = (detail) => {
     div.classList.add('col-12');
     div.classList.add('my-5');
     div.innerHTML = `
-                <div class="card" style="width: 70%; margin: auto; background-color:#Fdfcfa">
+                <div class="card" style="width: 70%; margin: auto; background-color:#Fdfcfa; box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;">
 
                     <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 25px; margin-bottom: 10px; " class="card-img-top img-fluid" alt="...">
 
