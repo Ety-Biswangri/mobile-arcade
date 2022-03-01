@@ -38,7 +38,7 @@ const displayPhones = (phones) => {
             div.classList.add('col-12');
             div.classList.add('mt-5');
             div.innerHTML = `
-                    <div class="card mb-3" style="width: 80%; margin: auto">
+                    <div class="card mb-3" style="width: 80%; margin: auto; background-color: #Fdfcfa;">
                         <img src="${phone.image}" class="card-img-top m-auto mt-3 img-fluid" style="width: 50%" alt="...">
                         <div class="card-body text-center">
                             <h5 class="card-title">${phone.phone_name}</h5>
@@ -69,17 +69,17 @@ const displayDetails = (detail) => {
     div.classList.add('col-12');
     div.classList.add('my-5');
     div.innerHTML = `
-                <div class="card" style="width: 70%; margin: auto; background-color:">
+                <div class="card" style="width: 70%; margin: auto; background-color:#Fdfcfa">
 
                     <img src="${detail.image}" style="width: 200px; margin: auto; height: 300px;  margin-top: 20px; margin-bottom: 10px; " class="card-img-top img-fluid" alt="...">
 
                     <div class="card-body">
-                        <h5 class="card-title text-center">${detail.name}</h5>
+                        <h4 class="card-title text-center">${detail.name}</h4>
                         <p class="card-text text-center">${detail.releaseDate ? detail.releaseDate : 'No Release Date is found'}</p>
                         <br>
 
                         <div class="m-auto">
-                        <h6> <b>Main Features:</b> </h6>
+                        <h5> <b>Main Features:</b> </h5>
                          <p> <b>Display Size:</b> ${detail.mainFeatures?.displaySize ? detail.mainFeatures.displaySize : 'No  Display Size is found'}
                          <br>
                          <b>Chipset:</b> ${detail.mainFeatures?.chipSet ? detail.mainFeatures.chipSet : 'No Chipset is found'}
@@ -94,7 +94,7 @@ const displayDetails = (detail) => {
 
                         <div class="m-auto">
                          <p>
-                         <h6> <b>Others:</b> </h6>
+                         <h5> <b>Others:</b> </h5>
                          <p> <b>WLAN:</b> ${detail.others?.WLAN ? detail.others.WLAN : 'No WLAN is found'}
                          <br>
                          <b>Bluetooth:</b> ${detail.others?.Bluetooth ? detail.others.Bluetooth : 'No Bluetooth is found'}
