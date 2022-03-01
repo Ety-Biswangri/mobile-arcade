@@ -1,9 +1,18 @@
 const phoneDetailsContainer = document.getElementById('phone-details-container');
+const spinner = document.getElementById('spinner');
+const errorMessage = document.getElementById('error-message');
+
+// spinner
+const showSpninner = (displayStatus) => {
+    spinner.style.display = displayStatus;
+}
 
 // loading phones using phone names
 const loadPhones = () => {
     const searchField = document.getElementById('search-text');
     const searchText = searchField.value;
+    errorMessage.innerHTML = '';
+    showSpninner('block');
 
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
@@ -17,7 +26,6 @@ const loadPhones = () => {
 // displaying phones using phone names
 const displayPhones = (phones) => {
     const phoneContainer = document.getElementById('phone-container');
-    const errorMessage = document.getElementById('error-message');
     phoneDetailsContainer.textContent = '';
     phoneContainer.textContent = '';
     errorMessage.textContent = '';
@@ -31,7 +39,6 @@ const displayPhones = (phones) => {
     }
     else {
         first20Phones.forEach(phone => {
-            // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col-lg-4');
             div.classList.add('col-md-6');
@@ -50,11 +57,13 @@ const displayPhones = (phones) => {
             phoneContainer.appendChild(div);
         });
     }
+    showSpninner('none');
 }
 
 // loading phone details using slug
-const loadDetails = (slug) => {
-    const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+const loadDetails = (id) => {
+    showSpninner('block');
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
 
     fetch(url)
         .then(response => response.json())
@@ -63,7 +72,6 @@ const loadDetails = (slug) => {
 
 // displaying phone details using slug
 const displayDetails = (detail) => {
-    // console.log(detail);
     phoneDetailsContainer.textContent = '';
     const div = document.createElement('div');
     div.classList.add('col-12');
@@ -123,4 +131,6 @@ const displayDetails = (detail) => {
                 </div>
             `;
     phoneDetailsContainer.appendChild(div);
+
+    showSpninner('none');
 }
