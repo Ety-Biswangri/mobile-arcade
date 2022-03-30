@@ -23,3 +23,11 @@ body{
 #spinner{
     display: none;
 }
+
+.button-text{
+    color: white;
+    text-decoration: none;
+}
+.button-text:hover{
+    color: white;
+}
