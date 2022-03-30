@@ -50,9 +50,11 @@ const displayPhones = (phones) => {
                         <div class="card-body text-center">
                             <h6 class="card-title fw-bold">${phone.phone_name}</h6>
                             <p class="card-text">Brand: ${phone.brand}</p>
-                            <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary">
-                            <a href="#" class="button-text">Explore Now</a>
-                            </Details>
+                            <a href="#">
+                            <button onclick="loadDetails('${phone.slug}')" class="btn btn-primary button-text">
+                            Explore Now 
+                            </button>
+                            </a>
                         </div>
                     </div>
                 `;

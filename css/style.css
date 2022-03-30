@@ -31,3 +31,12 @@ body{
 .button-text:hover{
     color: white;
 }
+
+.button-text a{
+    color: white;
+    text-decoration: none;
+}
+.button-text a:hover{
+    color: white;
+    text-decoration: none;
+}
